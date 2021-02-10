@@ -5,11 +5,11 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName = input.question("What is your name? " );
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
-let questions;
-let correctAnswers;
+let question = "Who was the first American woman in space? ";
+let correctAnswer = "Sally Ride";
+let candidateAnswer = " ";
+let questions = ['Who was the first American woman in space?', 'True or false: 5000 meters = 5 kilometers.', '(5 + 3)/2 * 10 = ?', 'Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?', 'What is the minimum crew size for the International Space Station (ISS)?'];
+let correctAnswers = ['Sallly Ride', 'True', '40', 'Trajectory', '3'] ;
 let candidateAnswers;
 
 
@@ -23,16 +23,19 @@ const input = require('readline-sync');
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   const input = require('readline-sync');
-
-let question = input.question("Who was the first American woman in space? ");
-// maybe move that up to 1.2 a? //
+let candidateAnswer = input.question("Who was the first American woman in space? ")
 
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+if (candidateAnswer === correctAnswer) {
+  console.log("Correct")
+}
+else {
+  console.log("Incorrect")
+}
 
   let grade;
   
