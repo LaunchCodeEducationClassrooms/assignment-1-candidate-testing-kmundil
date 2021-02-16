@@ -25,15 +25,21 @@ function askQuestion() {
   const input = require('readline-sync');
 
 for (let i = 0; i < questions.length; i++){ 
-  candidateAnswers = (input.question(questions[i]))
-  console.log(candidateAnswers);
- 
+  candidateAnswers = (input.question(questions[i])) 
+   console.log(`Your answer: ${candidateAnswers}.`);
+ console.log(`Correct answer: ${correctAnswers}.`)
 }
+
+
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+for (let i = 0; i < questions.length; i++){ 
+  candidateAnswers = (input.question(questions[i]))
+
+}
 if (candidateAnswers === correctAnswers) {
   console.log("Correct")
 }
