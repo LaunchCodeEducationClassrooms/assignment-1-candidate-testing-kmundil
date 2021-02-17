@@ -24,7 +24,7 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   /*const input = require('readline-sync');*/
  for(let i=0;i<=questions.length-1;i++){ 
-   console.log([i+1] +" ) " + questions[i])
+   console.log([i+1] +") " + questions[i])
    let candidateAnswer = input.question("Your Answer:  ");
    console.log("Correct Answer: "+correctAnswers[i]);
        
@@ -50,17 +50,18 @@ let gradeTotal = ""
 
 while (i < candidateAnswers.length){
   if(candidateAnswers.toLowerCase[i] == correctAnswers.toLowerCase[i]){
-    grade = grade + 1;
+    gradeTotal = grade + 1;
 
   }
   else {
-    grade += 0
+    gradeTotal += 0
   }
   console.log(`${Number([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade[i]}`)
   i ++
 }
-gradeTotal = Number(grade[i]) + Number(grade);
-console.log(`>>> Overall Grade: ${grade} of 5 responses correct) <<< \n >>>Status: <<<`)
+gradeTotal = ((grade) / 5) * 100
+
+console.log(`>>> Overall Grade: ${Number(gradeTotal)}% (${Number(grade)} of 5 responses correct) <<< \n >>>Status: <<<`)
 
   return grade;
 }
@@ -68,7 +69,7 @@ console.log(`>>> Overall Grade: ${grade} of 5 responses correct) <<< \n >>>Statu
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Hello, " + candidateName);
+  console.log("Candidate Name: " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
