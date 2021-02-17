@@ -8,9 +8,9 @@ let candidateName = input.question("What is your name? " );
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = " ";
-let questions = ['Who was the first American woman in space? ', 'True or false: 5000 meters = 5 kilometers. ', '(5 + 3)/2 * 10 = ? ', `Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? `, 'What is the minimum crew size for the International Space Station (ISS)? '];
+let questions = ['Who was the first American woman in space? ', 'True or false: 5000 meters = 5 kilometers. ', '(5 + 3)/2 * 10 = ? ', "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 'What is the minimum crew size for the International Space Station (ISS)? '];
 let correctAnswers = ['Sallly Ride', 'True', '40', 'Trajectory', '3'] ;
-let candidateAnswers;
+let candidateAnswers = [];
 
 
 function askForName() {
@@ -22,13 +22,20 @@ const input = require('readline-sync');
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  const input = require('readline-sync');
-
-for (let i = 0; i < questions.length; i++){ 
-  candidateAnswers = (input.question(questions[i])) 
-   console.log(`Your answer: ${candidateAnswers}.`);
- console.log(`Correct answer: ${correctAnswers}.`)
+  /*const input = require('readline-sync');*/
+ for(let i=0;i<=questions.length-1;i++){ 
+   console.log([i+1] +" ) " + questions[i])
+   let candidateAnswer = input.question("Your Answer:  ");
+   console.log("Correct Answer: "+correctAnswers[i]);
+       
 }
+/*
+for (let i = 0; i <= questions.length-1; i++){ 
+  console.log([i+1] + ")" + questions[i])
+  let candidateAnswer = (input.question("Your Answer: ")
+  console.log("Correct Answer: " + correctAnswers[i])
+*/
+
 
 
 }
@@ -36,19 +43,24 @@ for (let i = 0; i < questions.length; i++){
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-for (let i = 0; i < questions.length; i++){ 
-  candidateAnswers = (input.question(questions[i]))
 
-}
-if (candidateAnswers === correctAnswers) {
-  console.log("Correct")
-}
-else {
-  console.log("Incorrect")
-}
+let i = 0
+let grade = [];
+let gradeTotal = ""
 
-  let grade;
-  
+while (i < candidateAnswers.length){
+  if(candidateAnswers.toLowerCase[i] == correctAnswers.toLowerCase[i]){
+    grade = grade + 1;
+
+  }
+  else {
+    grade += 0
+  }
+  console.log(`${Number([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade[i]}`)
+  i ++
+}
+gradeTotal = Number(grade[i]) + Number(grade);
+console.log(`>>> Overall Grade: ${grade} of 5 responses correct) <<< \n >>>Status: <<<`)
 
   return grade;
 }
