@@ -27,8 +27,9 @@ function askQuestion() {
    console.log([i+1] +") " + questions[i])
    let candidateAnswer = input.question("Your Answer:  ");
    console.log("Correct Answer: "+correctAnswers[i]);
-       
-}
+      
+ } 
+ 
 /*
 for (let i = 0; i <= questions.length-1; i++){ 
   console.log([i+1] + ")" + questions[i])
@@ -44,26 +45,22 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-let i = 0
-let grade = [];
-let gradeTotal = ""
-
-while (i < candidateAnswers.length){
-  if(candidateAnswers.toLowerCase[i] == correctAnswers.toLowerCase[i]){
-    gradeTotal = grade + 1;
+let gradeTotal = 0
+let grade = 0
+for (let i = 0; i < questions.length; i++){
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+    gradeTotal++
+   console.log(`${([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade}`)
 
   }
-  else {
-    gradeTotal += 0
+ grade = (gradeTotal / 5)*100
+  if  (grade < 80) {
+  console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of 5 responses correct) <<< \n >>>Status: <<<`)
   }
-  console.log(`${Number([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade[i]}`)
-  i ++
-}
-gradeTotal = ((grade) / 5) * 100
+  
 
-console.log(`>>> Overall Grade: ${Number(gradeTotal)}% (${Number(grade)} of 5 responses correct) <<< \n >>>Status: <<<`)
 
-  return grade;
+return grade;
 }
 
 function runProgram() {
