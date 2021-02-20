@@ -42,6 +42,7 @@ for (let i = 0; i < questions.length; i++){
     gradeTotal+=1
     }
    console.log(`${([i+1])}) ${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]}`)
+   
    } 
    let grade = (gradeTotal / questions.length) * 100
    console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of ${questions.length} responses correct) <<<`);
@@ -52,6 +53,7 @@ for (let i = 0; i < questions.length; i++){
    }
 
   return grade;
+  i++
 }
 
 function runProgram() {
