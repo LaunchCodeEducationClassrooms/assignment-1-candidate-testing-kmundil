@@ -47,15 +47,16 @@ function gradeQuiz(candidateAnswers) {
 
 let gradeTotal = 0
 let grade = 0
+let numQuestions = questions.length
 for (let i = 0; i < questions.length; i++){
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
-    gradeTotal++
+    gradeTotal+1
    console.log(`${([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade}`)
 
   }
- grade = (gradeTotal / 5)*100
+ grade = (gradeTotal / numQuestions)*100
   if  (grade < 80) {
-  console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of 5 responses correct) <<< \n >>>Status: <<<`)
+  console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of ${questions.length} responses correct) <<< \n >>>Status: <<<`)
   }
   
 
@@ -83,4 +84,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-};
+  };
