@@ -67,6 +67,7 @@ gradeTotal = ((grade) / 5) * 100
 console.log(`>>> Overall Grade: ${Number(gradeTotal)}% (${Number(grade)} of 5 responses correct) <<< \n >>>Status: <<<`)*/
 let gradeTotal = 0
 let numQuestions = questions.length
+console.log("Candidate Name: " + candidateName);
 for (let i = 0; i < questions.length; i++){
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
     gradeTotal+=1
