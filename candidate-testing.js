@@ -24,13 +24,15 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   /*const input = require('readline-sync');*/
  for(let i=0;i<=questions.length-1;i++){ 
+   candidateAnswers[i] = input.question(questions[i])
+ }
+ /*  
    console.log([i+1] +") " + questions[i])
    let candidateAnswer = input.question("Your Answer:  ");
    console.log("Correct Answer: "+correctAnswers[i]);
-      
- } 
- 
-/*
+       
+}
+
 for (let i = 0; i <= questions.length-1; i++){ 
   console.log([i+1] + ")" + questions[i])
   let candidateAnswer = (input.question("Your Answer: ")
@@ -44,24 +46,42 @@ for (let i = 0; i <= questions.length-1; i++){
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+/*
+let i = 0
+let grade = [];
+let gradeTotal = ""
 
+while (i < candidateAnswers.length){
+  if(candidateAnswers.toLowerCase[i] == correctAnswers.toLowerCase[i]){
+    gradeTotal = grade + 1;
+
+  }
+  else {
+    gradeTotal += 0
+  }
+  console.log(`${Number([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade[i]}`)
+  i ++
+}
+gradeTotal = ((grade) / 5) * 100
+
+console.log(`>>> Overall Grade: ${Number(gradeTotal)}% (${Number(grade)} of 5 responses correct) <<< \n >>>Status: <<<`)*/
 let gradeTotal = 0
-let grade = 0
 let numQuestions = questions.length
 for (let i = 0; i < questions.length; i++){
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
-    gradeTotal+1
-   console.log(`${([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${grade}`)
+    gradeTotal++
+    }
+   console.log(`${([i])+1})${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]} \n Grade: ${gradeTotal}`)
+   } 
+   let grade = (gradeTotal / questions.length) * 100
+   console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of ${questions.length} responses correct)`);
+   if (grade >= 80){
+     coonsole.log(`>>>Status: PASSED<<<`)
+   } else {
+     console.log(`>>>Status: FAILED<<<`)
+   }
 
-  }
- grade = (gradeTotal / numQuestions)*100
-  if  (grade < 80) {
-  console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of ${questions.length} responses correct) <<< \n >>>Status: <<<`)
-  }
-  
-
-
-return grade;
+  return grade;
 }
 
 function runProgram() {
@@ -84,4 +104,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-  };
+};
