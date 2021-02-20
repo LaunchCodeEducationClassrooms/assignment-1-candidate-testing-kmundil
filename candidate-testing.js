@@ -40,7 +40,7 @@ for (let i = 0; i < questions.length; i++){
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
     gradeTotal+=1
     }
-   console.log(`${([i+1])}) ${questions[i]}\n Your answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]}`)
+   console.log(`${([i+1])}) ${questions[i]}\n Your Answer: ${candidateAnswers[i]} \n Correct Answer: ${correctAnswers[i]}`)
    
    } 
    let grade = (gradeTotal / questions.length) * 100
