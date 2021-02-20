@@ -26,7 +26,7 @@ function askQuestion() {
  for(let i=0;i<=questions.length-1;i++){ 
    candidateAnswers[i] = input.question(questions[i])
  }
- 
+i++ 
 
 }
 
