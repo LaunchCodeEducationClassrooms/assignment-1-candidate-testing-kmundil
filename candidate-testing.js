@@ -40,11 +40,11 @@ for (let i = 0; i < questions.length; i++){
     gradeTotal+=1
     }
    console.log(`${([i+1])}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]} \nCorrect Answer: ${correctAnswers[i]}\n`)
-   i++
+   
    } 
    let grade = (gradeTotal / questions.length) * 100
    console.log(`>>> Overall Grade: ${grade}% (${gradeTotal} of ${questions.length} responses correct) <<<`);
-   if (grade >= 4){
+   if (grade >= 80){
      console.log(`>>> Status: PASSED <<<`)
    } else {
      console.log(`>>> Status: FAILED <<<`)
